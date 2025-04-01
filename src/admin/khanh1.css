@@ -1,0 +1,94 @@
+.fullscreen {
+  width: 100%;
+  /* max-width: 500px; */
+  height: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.box-1{
+    max-width: 500px;
+
+}
+.tiennghi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4 cột bằng nhau */
+  gap: 10px; /* Khoảng cách giữa các checkbox */
+}
+
+.tiennghi-item {
+  display: flex;
+  align-items: center;
+}
+.form-check-input[type=checkbox] {
+  border-radius: 16.25em;
+ 
+  border: 0.7px solid;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #ff0000;
+  background-color: #d1e7dd;
+  border-color: #d1e7dd;
+}
+.form-label {
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+.form-control {
+  height: 50px;
+  transition: none;
+  font-size: 15px;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width: 100%;
+  margin: 0px 0px 0px 0px;
+}
+.fullscreen{
+  display: flex;
+}
+h2{
+  text-align: center;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  /* border-radius: 50%; */
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+.image-container img {
+  max-width: 100%;  /* Đảm bảo ảnh không vượt quá container */
+  height: auto;      /* Giữ tỷ lệ ảnh */
+  max-height: 300px; /* Điều chỉnh chiều cao tối đa */
+  object-fit: contain; /* Hiển thị toàn bộ ảnh mà không bị cắt */
+}
+.image-gallery {
+  max-width: 500px; /* Điều chỉnh kích thước theo ý bạn */
+  margin: auto; /* Căn giữa */
+}
+.image-gallery{
+  background-color: rgb(99, 91, 91);
+}
+.box-2{
+  margin-left: 10px;
+}
+.box-1{
+  width: 50%;
+  /* margin-left: 15%; */
+}

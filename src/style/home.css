@@ -1,0 +1,75 @@
+.home_wrapper {
+  display: flex;
+}
+
+.btn_pull.visible {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 11px 14px;
+  position: absolute;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1.9rem;
+  top: 50%;
+  left: 24.8%;
+  z-index: 99999;
+  transition: all 0.3s ease;
+}
+
+.btn_pull.hidden {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 11px 14px;
+  position: absolute;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1.9rem;
+  top: 50%;
+  left: 0%;
+  z-index: 99999;
+  transition: all 0.3s ease;
+}
+
+.icon_right {
+  color: #000;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    /* Giảm kích thước font cho mobile */
+  }
+
+  .icon_right {
+    display: block;
+  }
+
+  .btn_pull.hidden {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 25px 16px;
+    position: absolute;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.9rem;
+    top: 50%;
+    left: 0%;
+    z-index: 99999;
+    transition: all 0.3s ease;
+  }
+
+  .btn_pull.visible {
+    display: none;
+  }
+
+  .icon_right {
+    color: #000;
+    font-size: 2.2rem;
+  }
+
+  .icon_close {
+    top: 41.6%;
+    right: 19.6%;
+  }
+}

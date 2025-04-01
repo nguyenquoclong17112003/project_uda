@@ -1,0 +1,82 @@
+/* Định dạng tổng thể */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+  }
+  
+  /* Container tổng */
+  .uda-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Header */
+  .uda-header {
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Layout chính */
+  .uda-main {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Sidebar */
+  .uda-sidebar {
+    width: 280px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .uda-nav-item {
+    background: none;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    color: #333;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .uda-nav-item:hover {
+    background: #28a745;
+    color: white;
+  }
+  
+  .uda-nav-item.active {
+    background: #218838;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Nội dung chính */
+  .uda-content {
+    flex-grow: 1;
+    padding: 30px;
+    background: white;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  

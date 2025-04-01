@@ -1,0 +1,73 @@
+.uda-tinhnang1 {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .uda-tinhnang1-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .uda-tinhnang1-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .uda-tinhnang1-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 18px; /* Tăng kích thước chữ trong bảng */
+  }
+  
+  .uda-tinhnang1-table th, 
+  .uda-tinhnang1-table td {
+    padding: 14px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .uda-tinhnang1-table th {
+    background-color: #28a745;
+    color: white;
+    font-size: 20px; /* Font lớn hơn tiêu đề */
+  }
+  
+  .uda-tinhnang1-button {
+    padding: 10px 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .uda-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .uda-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .uda-edit {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .uda-delete {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .uda-tinhnang1-empty {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+    font-size: 18px;
+  }
+  
