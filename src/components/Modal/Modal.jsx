@@ -5,6 +5,7 @@ import {
   faClose,
   faCircleCheck,
   faCircleXmark,
+  faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames/bind";
 import styles from "./Modal.module.scss";
@@ -20,8 +21,17 @@ const Modal = ({ desc, note, onClose, type = "success" }) => {
         </button>
         <div className={cx("modal_header")}>
           <FontAwesomeIcon
-            className={cx("check_circle", { error: type === "error" })}
-            icon={type === "error" ? faCircleXmark : faCircleCheck}
+            className={cx("check_circle", {
+              error: type === "error",
+              warning: type === "warning",
+            })}
+            icon={
+              type === "error"
+                ? faCircleXmark
+                : type === "warning"
+                ? faExclamationCircle // Icon warning
+                : faCircleCheck
+            }
           />
         </div>
         <div className={cx("modal_body")}>
@@ -37,7 +47,7 @@ Modal.propTypes = {
   desc: PropTypes.string.isRequired,
   note: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
-  type: PropTypes.oneOf(["success", "error"]),
+  type: PropTypes.oneOf(["success", "error", "warning"]),
 };
 
 export default Modal;

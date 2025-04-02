@@ -39,6 +39,12 @@ const HousePopupDetail = ({ house, onCoordinatesr, onShowRouting }) => {
     setIsModalVisible(false); // Đặt trạng thái về false
     setTimeout(() => {
       setIsModalVisible(true); // Đặt lại trạng thái về true
+
+      // Tự động ẩn modal sau 4 giây
+      setTimeout(() => {
+        setIsModalVisible(false);
+        console.log("Modal is now hidden");
+      }, 4000);
     }, 50); // Đặt timeout ngắn để đảm bảo React nhận ra sự thay đổi
   };
 
@@ -477,8 +483,8 @@ const HousePopupDetail = ({ house, onCoordinatesr, onShowRouting }) => {
                         <img
                           src={
                             danhGia.User?.avatar
-                              ? `http://192.168.137.1:8000/upload_avataruser/${danhGia.User.avatar}`
-                              : "http://192.168.137.1:8000/upload_avataruser/avatar-mac-dinh.png"
+                              ? `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/upload_avataruser/${danhGia.User.avatar}`
+                              : "https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/upload_avataruser/avatar-mac-dinh.png"
                           }
                           alt="Avatar"
                           width={30}
@@ -519,6 +525,7 @@ const HousePopupDetail = ({ house, onCoordinatesr, onShowRouting }) => {
                         value={noiDung}
                         onChange={(e) => setNoiDung(e.target.value)}
                         rows={4}
+                        maxLength={200}
                       />
                     </div>
 

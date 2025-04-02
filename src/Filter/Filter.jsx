@@ -1,11 +1,12 @@
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../hook/useIsMobile";
 import { fetchFind, fetchThongTinThem, fetchTienNghi } from "../services/api"; // Import hàm fetchTienIch
 import styles from "./Filter.module.scss";
+import { ModalContext } from "../App";
 
 const cx = classNames.bind(styles);
 
@@ -27,6 +28,7 @@ const Filter = ({ onFilter, onReset }) => {
     thongTinThem: [],
     radius: "",
   });
+  const { showModal } = useContext(ModalContext);
 
   const isMobile = useIsMobile();
 

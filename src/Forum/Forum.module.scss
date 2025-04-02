@@ -837,6 +837,9 @@
 
 // !
 @media screen and (max-width: 480px) {
+  .forum_background {
+    height: 100vh;
+  }
   .forum {
     max-height: 100vh;
   }

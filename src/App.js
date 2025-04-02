@@ -43,6 +43,12 @@ const App = () => {
     setTimeout(() => {
       setIsModalVisible(true);
       console.log("Modal is now visible");
+
+      // Tự động ẩn modal sau 4 giây
+      setTimeout(() => {
+        setIsModalVisible(false);
+        console.log("Modal is now hidden");
+      }, 4000);
     }, 50);
   };
 

@@ -33,6 +33,7 @@
   justify-content: center;
   z-index: 9999999;
   align-items: center;
+  will-change: opacity, transform;
   animation: modalAppear 0.3s ease-out forwards,
     modalDisappear 0.3s ease-out 4.7s forwards;
 }
@@ -76,6 +77,10 @@
 
 .check_circle.error {
   color: #dc3545; // Màu đỏ cho lỗi
+}
+
+.check_circle.warning {
+  color: orange; // Màu đỏ cho lỗi
 }
 
 .modal_desc {

@@ -24,7 +24,8 @@ import { ModalContext } from "../App";
 import Login from "../Login/Login";
 import Modal from "../components/Modal/Modal";
 import ConfirmModal from "../components/ConfirmModal/ConfirmModal";
-const API = "http://192.168.137.1:8000"; // Đường dẫn API của bạn
+const API =
+  "https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app"; // Đường dẫn API của bạn
 
 const cx = classNames.bind(styles);
 
@@ -111,7 +112,7 @@ const Forum = ({ onCloseForum }) => {
         setUserInfo({
           fullname: decodedToken.fullname || "Người dùng ẩn danh",
           avatar: decodedToken.avatar
-            ? `http://192.168.137.1:8000/upload_avataruser/${decodedToken.avatar}`
+            ? `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/upload_avataruser/${decodedToken.avatar}`
             : Avatar,
           id: decodedToken.id,
         });
@@ -172,11 +173,14 @@ const Forum = ({ onCloseForum }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://192.168.137.1:8000/api/all", {
-          headers: {
-            "ngrok-skip-browser-warning": "true", // Bỏ qua cảnh báo ngrok
-          },
-        });
+        const response = await axios.get(
+          "https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/all",
+          {
+            headers: {
+              "ngrok-skip-browser-warning": "true", // Bỏ qua cảnh báo ngrok
+            },
+          }
+        );
         console.log("Dữ liệu API:", response.data);
         const findData = response.data.filter((loc) => loc.status === true);
         // Đảm bảo dữ liệu là một mảng trước khi cập nhật state
@@ -220,7 +224,7 @@ const Forum = ({ onCloseForum }) => {
 
     // Kiểm tra nếu tổng số hình ảnh vượt quá 5
     if (postImages.length + files.length > 5) {
-      alert("Bạn chỉ được đăng tối đa 5 hình ảnh.");
+      showModal("Cảnh báo!", "Bạn chỉ được đăng tối đa 5 hình ảnh.", "warning");
       return;
     }
 
@@ -267,7 +271,7 @@ const Forum = ({ onCloseForum }) => {
 
       // 1. Tạo bài viết trước
       const postResponse = await axios.post(
-        "http://192.168.137.1:8000/api/create",
+        "https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/create",
         {
           user_id: userId,
           content: postContent,
@@ -294,7 +298,7 @@ const Forum = ({ onCloseForum }) => {
 
         // Sử dụng API endpoint mới với post_id
         await axios.post(
-          `http://192.168.137.1:8000/api/upload/${postId}`,
+          `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/upload/${postId}`,
           formData,
           {
             headers: {
@@ -343,7 +347,7 @@ const Forum = ({ onCloseForum }) => {
     try {
       setIsConfirmModalVisible(false);
       const response = await axios.delete(
-        `http://192.168.137.1:8000/api/delete/${postToDelete}`,
+        `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/delete/${postToDelete}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -419,7 +423,7 @@ const Forum = ({ onCloseForum }) => {
       });
 
       const response = await axios.post(
-        "http://192.168.137.1:8000/api/comments",
+        "https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/comments",
         {
           content: commentContent,
           user_id: userId,
@@ -458,7 +462,7 @@ const Forum = ({ onCloseForum }) => {
   const fetchComments = async (postId) => {
     try {
       const response = await axios.get(
-        `http://192.168.137.1:8000/api/comments/${postId}`,
+        `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/comments/${postId}`,
         {
           headers: {
             "ngrok-skip-browser-warning": "true", // Bỏ qua cảnh báo ngrok
@@ -481,7 +485,7 @@ const Forum = ({ onCloseForum }) => {
   const fetchCommentCounts = async (postId) => {
     try {
       const response = await axios.get(
-        `http://192.168.137.1:8000/api/comments/${postId}`,
+        `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/comments/${postId}`,
         {
           headers: {
             "ngrok-skip-browser-warning": "true", // Bỏ qua cảnh báo ngrok
@@ -533,7 +537,7 @@ const Forum = ({ onCloseForum }) => {
     try {
       setIsConfirmCommentModalVisible(false); // Đóng modal trước khi xóa
       const response = await axios.delete(
-        `http://192.168.137.1:8000/api/comments/${commentToDelete}`,
+        `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/api/comments/${commentToDelete}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -829,7 +833,7 @@ const Forum = ({ onCloseForum }) => {
                         className={cx("img_content")}
                         src={
                           post.author?.avatar
-                            ? `http://192.168.137.1:8000/upload_avataruser/${post.author.avatar}`
+                            ? `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/upload_avataruser/${post.author.avatar}`
                             : Avatar
                         }
                       />
@@ -865,11 +869,11 @@ const Forum = ({ onCloseForum }) => {
                               <Image
                                 key={index}
                                 className={cx("content_img-form")}
-                                src={`http://192.168.137.1:8000${image.image_url}`}
+                                src={`https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app${image.image_url}`}
                                 alt={`Post Image ${index + 1}`}
                                 onClick={() =>
                                   handleImageClick(
-                                    `http://192.168.137.1:8000${image.image_url}`,
+                                    `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app${image.image_url}`,
                                     post.id
                                   )
                                 }
@@ -946,7 +950,7 @@ const Forum = ({ onCloseForum }) => {
                           className={cx("comment-avatar")}
                           src={
                             comment.User?.avatar
-                              ? `http://192.168.137.1:8000/upload_avataruser/${comment.User.avatar}`
+                              ? `https://0c7f-2405-4802-95f5-fb50-1d0-7d85-ffff-580f.ngrok-free.app/upload_avataruser/${comment.User.avatar}`
                               : Avatar
                           }
                           onError={(e) => {
